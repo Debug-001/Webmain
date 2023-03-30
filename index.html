@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
+  <link rel="stylesheet" href="/src/assets/bootstrap/bootstrap.min.css">
+    <title>Webversed</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+  <script src="/src/assets/js/bootstrap.min.js"></script>
+  <script>
+    !(function () {
+  "use strict";
+  !(function () {
+    if (
+      "requestAnimationFrame" in window &&
+      !/Mobile|Android/.test(navigator.userAgent)
+    ) {
+      var e = document.querySelectorAll("[data-bss-parallax]");
+      if (e.length) {
+        var t,
+          n = [];
+        window.addEventListener("scroll", a),
+          window.addEventListener("resize", a),
+          a();
+      }
+    }
+    function a() {
+      n.length = 0;
+      for (var a = 0; a < e.length; a++) {
+        var i = e[a].getBoundingClientRect(),
+          o =
+            parseFloat(e[a].getAttribute("data-bss-parallax-speed"), 10) || 0.5;
+        i.bottom > 0 &&
+          i.top < window.innerHeight &&
+          n.push({ speed: o, node: e[a] });
+      }
+      cancelAnimationFrame(t), n.length && (t = requestAnimationFrame(r));
+    }
+    function r() {
+      for (var e = 0; e < n.length; e++) {
+        var t = n[e].node,
+          a = n[e].speed;
+        t.style.transform = "translate3d(0, " + -window.scrollY * a + "px, 0)";
+      }
+    }
+  })();
+})();
+
+  </script>
+  <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+</body>
+</html>

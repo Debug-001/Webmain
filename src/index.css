@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Zanabazar+Square&display=swap");
+
+* {
+  font-family: "Noto Sans Zanabazar Square", sans-serif;
+}
+
+.image{
+    display: none;
+}
+
+:root {
+  --container-width-lg: 100%;
+  --container-width-md: 100%;
+  --container-width-sm: 100%;
+  --transition: all 400ms ease;
+}
+.container {
+  width: var(--container-width-lg);
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.nav_logo {
+  width: 50px !important;
+  margin-right: 1rem;
+}
+
+#card {
+  margin-left: 15rem;
+}
+
+.card {
+  box-shadow: 10px 10px 10px rgba(99, 99, 99, 0.2);
+}
+
+.card:hover {
+  box-shadow: 10px 10px 10px 10px rgba(18, 57, 80, 0.2);
+  transition: 0.4s;
+}
+
+.portfolio__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+.portfolio__item {
+  background: var(--color-bg-variant);
+  padding: 1.2rem;
+  border-radius: 2rem;
+  border: 1px solid transparent;
+  transition: all 400ms ease;
+}
+
+.portfolio__item:hover {
+  border-color: var(--color-primary-variant);
+  background: transparent;
+}
+
+.portfolio__item-image {
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.portfolio__item h3 {
+  margin: 1.2rem 0.2rem;
+}
+
+.portfolio__item-cta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .portfolio__container {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+  }
+  .container {
+    width: var(--container-width-md);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: var(--container-width-sm);
+  }
+  .portfolio__container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding-left: 55px;
+    padding-top: 20px;
+  }
+
+  .port {
+    padding-left: 50px;
+  }
+  .port1 {
+    padding-left: 50px;
+    padding-top: 80px;
+  }
+}
